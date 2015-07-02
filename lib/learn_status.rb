@@ -1,4 +1,5 @@
 require 'netrc'
+require 'learn_web'
 
 require 'learn_status/version'
 require 'learn_status/report'
