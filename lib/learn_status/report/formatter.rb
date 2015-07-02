@@ -4,6 +4,8 @@ module LearnStatus
       attr_reader   :status
       attr_accessor :lights
 
+      extend Forwardable
+
       def_delegators :status, :title, :started, :students_working,
                      :median_completion_time
 
@@ -18,13 +20,14 @@ module LearnStatus
       end
 
       def printable_output
-        <<-OUTPUT.sub(/^\s{10}/,'')
-          Current Lesson: #{title}
-          Started: #{started}
-          Students Working: #{students_working}
-          Median Completion Time: #{median_completion_time}
+        <<-OUTPUT
 
-          #{lights_output}
+Current Lesson: #{title}
+Started: #{started}
+Students Working: #{students_working}
+Median Completion Time: #{median_completion_time}
+
+#{lights_output}
         OUTPUT
       end
 
@@ -37,23 +40,25 @@ module LearnStatus
           output << "#{light[:title]}: "
 
           if light[:color]
-            output << '●'.send(color)
+            output << '●'.send(light[:color])
           else
             output << 'x'
           end
 
           if light[:tests]
-            output << "   (Passing: #{light[:tests][:passing]} / Failing: #{light[:tests][:passing]})"
+            output << " (Passing: #{light[:tests][:passing]} / Failing: #{light[:tests][:passing]})"
           end
 
           output << "\n"
         end
+
+        output
       end
 
       def build_lights_status
         self.lights = status.lights.map do |light|
           {
-            title: light[:type].split('_').map(&:capitalize),
+            title: light[:type].split('_').map(&:capitalize).join(' '),
             color: if light[:started]
               light[:passing] ? :green : :red
             end,

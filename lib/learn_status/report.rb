@@ -27,7 +27,7 @@ module LearnStatus
     end
 
     def generate_report
-      formatted_report = LearnWeb::Report::Formatter.new(status).execute
+      formatted_report = LearnStatus::Report::Formatter.new(status).execute
       puts formatted_report.printable_output
     end
   end
