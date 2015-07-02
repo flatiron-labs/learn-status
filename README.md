@@ -1,12 +1,16 @@
-# Learn::Status
+# learn-status
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/learn/status`. To experiment with that code, run `bin/console` for an interactive prompt.
-
-TODO: Delete this and the text above, and describe your gem
+Gets your current lesson status from Learn.co.
 
 ## Installation
 
-Add this line to your application's Gemfile:
+Install with:
+
+```
+$ gem install learn-status
+```
+
+Alternatively, add this line to your application's Gemfile:
 
 ```ruby
 gem 'learn-status'
@@ -16,26 +20,18 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install learn-status
-
 ## Usage
 
-TODO: Write usage instructions here
+In your code:
 
-## Development
-
-After checking out the repo, run `bin/setup` to install dependencies. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+```ruby
+require 'learn_status'
+```
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/learn-status.
-
-
-## License
-
-The gem is available as open source under the terms of the [MIT License](http://opensource.org/licenses/MIT).
-
+1. Fork it ( https://github.com/flatiron-labs/learn-status/fork )
+2. Create your feature branch (`git checkout -b my-new-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin my-new-feature`)
+5. Create a new Pull Request
