@@ -46,7 +46,7 @@ Median Completion Time: #{median_completion_time}
           end
 
           if light[:tests]
-            output << " (Passing: #{light[:tests][:passing]} / Failing: #{light[:tests][:passing]})"
+            output << " (Passing: #{light[:tests][:passing]} / Failing: #{light[:tests][:failing]})"
           end
 
           output << "\n"
