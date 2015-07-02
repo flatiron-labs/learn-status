@@ -1,7 +1,7 @@
 # coding: utf-8
 lib = File.expand_path('../lib', __FILE__)
 $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
-require 'learn/status/version'
+require 'learn_status/version'
 
 Gem::Specification.new do |spec|
   spec.name          = "learn-status"
@@ -9,7 +9,7 @@ Gem::Specification.new do |spec|
   spec.authors       = ["Flatiron School"]
   spec.email         = ["learn@flatironschool.com"]
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
+  spec.summary       = %q{Gets your current status from Learn.co}
   spec.homepage      = "https://learn.co"
   spec.license       = "MIT"
 
@@ -24,7 +24,7 @@ Gem::Specification.new do |spec|
   spec.files         = `git ls-files -z`.split("\x0").reject { |f| f.match(%r{^(test|spec|features)/}) }
   spec.bindir        = "exe"
   spec.executables   = spec.files.grep(%r{^exe/}) { |f| File.basename(f) }
-  spec.require_paths = ["lib", "bin"]
+  spec.require_paths = ["lib", "exe"]
 
   spec.add_development_dependency "bundler", "~> 1.10"
   spec.add_development_dependency "rake", "~> 10.0"
